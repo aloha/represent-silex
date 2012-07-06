@@ -1,0 +1,59 @@
+<h2>{{subtitle}}</h2>
+    {% if tabledata is not defined %}
+<p>No data found</p>
+    {% else %}
+<div class="row-fluid">
+    <div class="span8"><h5>Information</h5></div>
+    <div class="span4"><h5>Actions</h5></div>
+</div>
+        {% for place in tabledata %}
+<div class="row-fluid place-item">
+    <div class="span8">
+        <div class="pull-left">
+            <img src="{{app.request.basepath}}/view/img/icons/{{place.type|e}}.png" alt="{{place.type|e}}" title="{{place.type|e}}"/>
+        </div>
+        <div class="place-title pull-left">
+            <h5>{{place.title|e}}</h5>
+            <p><a href="{{place.uri|e}}">{{place.uri|e}}</a></p>
+        </div>
+    </div>
+    <div class="span4 action-buttons">
+        <a class="btn btn-small" href="{{app.request.basepath}}/admin/edit/{{place.id}}">
+            Edit
+        </a>
+        {% if place.approved != 1 %}
+        <a class="btn btn-small btn-success" href="{{app.request.basepath}}/admin/approve/{{place.id}}">
+            Approve
+        </a>
+        {% endif %}
+        {% if place.approved != "" %}
+        <a class="btn btn-small btn-inverse" href="{{app.request.basepath}}/admin/reject/{{place.id}}">
+            Reject
+        </a>
+        {% endif %}
+        <!-- <a class="btn btn-small btn-danger" href="{{app.request.basepath}}/admin/delete/{{place.id}}">
+            Delete
+        </a> -->
+    </div>
+</div>
+        {% endfor %}
+    {% endif %}
+{%if totalpages > 0%}
+<div class="row-fluid">
+    <div class="pagination">
+        <ul>
+            <li class="{% if page == 1 %}active{% endif %}">
+                <a href="/admin/?sortby={{sortby}}&page={{page-1}}{%if q is defined%}&q={{q}}{%endif%}">Prev</a>
+            </li>
+            {% for i in startpage..endpage %}
+            <li class="{% if page == i %}active{% endif %}">
+                <a href="{{app.request.basepath}}/admin/?sortby={{sortby}}&page={{i}}{%if q is defined%}&q={{q}}{%endif%}">{{i}}</a>
+            </li>
+            {% endfor %}
+            <li class="{% if page == totalpages %}active{% endif %}">
+                <a href="/admin/?sortby={{sortby}}&page={{page+1}}{%if q is defined%}&q={{q}}{%endif%}">Next</a>
+            </li>
+        </ul>
+    </div>
+</div>
+{%endif%}

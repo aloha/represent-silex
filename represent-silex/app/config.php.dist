@@ -1,0 +1,15 @@
+<?php
+
+$config = array(
+    'db_host' => 'localhost',
+    'db_dbname' => '',
+    'db_user' => '',
+    'db_password' => ''
+);
+
+$config['googleapi_key'] = '123456';
+
+// User Configuration
+$config['users'] = array(
+    'admin' => array('ROLE_ADMIN', INSERT_HASHED_PASSWORD_HERE), 
+);

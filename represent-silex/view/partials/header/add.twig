@@ -1,0 +1,6 @@
+{% extends '_header.twig' %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src="{{app.request.basepath}}/view/js/add.js"></script>
+{% endblock %}

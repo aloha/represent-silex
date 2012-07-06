@@ -1,0 +1,19 @@
+{% include '_header.twig' %}
+{% include 'partials/header/admin.twig' %}
+
+{% include 'admin/_nav.twig' %}
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span9">
+            <div class="row-fluid">
+                <div class="span12 placetable">
+                    {% include 'admin/place_table.twig' %}
+                </div>
+            </div><!--/row-->
+        </div><!--/span-->
+    </div><!--/row-->
+    <hr>
+    {% include 'admin/_edit.twig' %}
+</div>
+{% include '_footer.twig' %}

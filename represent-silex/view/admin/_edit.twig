@@ -1,0 +1,81 @@
+<!-- add something modal -->
+<div class="modal hide" id="modal_edit">
+    <form action="{{app.request.basepath}}/admin/edit/" id="modal_editform" class="form-horizontal">
+        <input type="hidden" name="id" value=""/>
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h3>Editing Place</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+                Want to add your company to this map?
+                Submit it below and we'll review it ASAP.
+            </p>
+            <div id="result"></div>
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label" for="edit_owner_name">Your Name</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" name="owner_name" id="edit_owner_name" maxlength="100">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="edit_owner_email">Your Email</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" name="owner_email" id="edit_owner_email" maxlength="100">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="edit_title">Company Name</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" name="title" id="edit_title" maxlength="100">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="input01">Company Type</label>
+                    <div class="controls">
+                        <select name="type" id="edit_type" class="input-xlarge">
+                            <option value="startup">Startup</option>
+                            <option value="accelerator">Accelerator</option>
+                            <option value="incubator">Incubator</option>
+                            <option value="coworking">Coworking</option>
+                            <option value="investor">VC/Angel</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="edit_address">Street Address</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" name="address" id="edit_address">
+                        <p class="help-block">
+                            Should be your full street address (including city and zip).
+                            If it works on Google Maps, it will work here.
+                        </p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="edit_uri">Website URL</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="edit_uri" name="uri" placeholder="http://">
+                        <p class="help-block">
+                            Should be your full URL with no trailing slash, e.g. "http://www.yoursite.com"
+                        </p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="edit_description">Description</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="edit_description" name="description" maxlength="150">
+                        <p class="help-block">
+                            Brief, concise description. What's your product? What problem do you solve? Max 150 chars.
+                        </p>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Complete Edit</button>
+            <a href="#" class="btn" data-dismiss="modal" style="float: right;">Close</a>
+        </div>
+    </form>
+</div>

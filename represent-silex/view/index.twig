@@ -1,0 +1,16 @@
+{% include '_header.twig' %}
+
+{% include 'partials/header/add.twig' %}
+{% include 'partials/fblike.twig' %}
+{% include 'partials/mainmenu.twig' %}
+{% include 'partials/moreinfo.twig' %}
+{% include 'partials/add.twig' %}
+
+<!-- google map -->
+<div id="map_canvas"></div>
+<script type="text/javascript">
+    var baseUrl = "{{app.request.basepath}}";
+    var markers = {{markers|raw}};
+</script>
+<script src="view/js/map.js"></script>
+{% include '_footer.twig' %}

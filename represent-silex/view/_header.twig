@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Aloha Startups{% if title is defined %} - {{title}}{% endif %}</title>
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{{app.request.basepath}}/view/css/bootstrap.css" />
+    <link rel="stylesheet" href="{{app.request.basepath}}/view/css/bootstrap-responsive.css" />
+    <link rel="stylesheet" href="{{app.request.basepath}}/view/css/map.css" />
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="{{app.request.basepath}}/view/css/mobile.css" />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    {% endblock %}
+    {% block javascripts %}
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBur3UhajOuojC8p2OVdxKRAFN1B_t5c9g&sensor=false"></script>
+    <script src="{{app.request.basepath}}/view/js/jquery-1.7.2.min.js"></script>
+    <script src="{{app.request.basepath}}/view/js/jquerypp.custom.js"></script>
+    <script src="{{app.request.basepath}}/view/js/bootstrap.js"></script>
+    <script src="{{app.request.basepath}}/view/js/bootstrap-typeahead.js"></script>
+    <script src="{{app.request.basepath}}/view/js/label.js"></script>
+    {% endblock %}
+</head>
+<body>

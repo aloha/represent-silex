@@ -1,0 +1,81 @@
+{% include '_header.twig' %}
+{% include 'partials/header/admin.twig' %}
+{% include 'admin/_nav.twig' %}
+
+<div class="container">
+    <div class="row-fluid">
+        <h2>Edit Place</h2>
+        <div class="span12 well">
+            <form action="{{app.request.basepath}}/admin/edit/" id="editform" class="form-horizontal" method="POST">
+                <input type="hidden" name="id" value="{{place.id}}"/>
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" for="edit_owner_name">Name</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" name="owner_name" id="edit_owner_name" maxlength="100" value="{{place.owner_name}}">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="edit_owner_email">Email</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" name="owner_email" id="edit_owner_email" maxlength="100" value="{{place.owner_email}}">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="edit_title">Company Name</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" name="title" id="edit_title" maxlength="100" value="{{place.title}}">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="input01">Company Type</label>
+                        <div class="controls">
+                            <select name="type" id="edit_type" class="input-xlarge">
+                                <option value="startup" {%if place.type == 'startup'%}selected="selected"{% endif %}>Startup</option>
+                                <option value="accelerator" {%if place.type == 'accelerator'%}selected="selected"{% endif %}>Accelerator</option>
+                                <option value="incubator" {%if place.type == 'incubator'%}selected="selected"{% endif %}>Incubator</option>
+                                <option value="coworking" {%if place.type == 'coworking'%}selected="selected"{% endif %}>Coworking</option>
+                                <option value="investor" {%if place.type == 'investor'%}selected="selected"{% endif %}>VC/Angel</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="edit_address">Street Address</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" name="address" id="edit_address" value="{{place.address}}">
+                            <p class="help-block">
+                                Should be your full street address (including city and zip).
+                                If it works on Google Maps, it will work here.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="edit_uri">Website URL</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="edit_uri" name="uri" placeholder="http://" value="{{place.uri}}">
+                            <p class="help-block">
+                                Should be your full URL with no trailing slash, e.g. "http://www.yoursite.com"
+                            </p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="edit_description">Description</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="edit_description" name="description" maxlength="150" value="{{place.description}}">
+                            <p class="help-block">
+                                Brief, concise description. What's your product? What problem do you solve? Max 150 chars.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="span9">
+                        <div class="pull-right">
+                            <button type="submit" class="btn btn-large btn-primary">Complete Edit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div><!--/row-->
+    <hr>
+</div>
+{% include '_footer.twig' %}

@@ -1,0 +1,11 @@
+{% extends '_header.twig' %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src="{{app.request.basepath}}/view/js/edit.js"></script>
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{app.request.basepath}}/view/css/admin.css" />
+{% endblock %}

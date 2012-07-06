@@ -1,0 +1,80 @@
+<!-- main menu bar -->
+<div class="menu">
+    <div class="wrapper">
+        <div class="logo">
+            <a href="./">
+                <img src="{{app.request.basepath}}/view/img/logo.png" alt="" />
+            </a>
+        </div>
+        <ul class="filters">
+            <li>
+                <img class="icon" src="{{app.request.basepath}}/view/img/icons/startup.png" alt="" />
+                <input type="checkbox" id="filter_startup" checked="checked" onClick="toggle('startup')">
+                <label for="filter_startup">Startups <span>({{startup}})</span></label>
+            </li>
+            <li>
+                <img class="icon" src="{{app.request.basepath}}/view/img/icons/accelerator.png" alt="" />
+                <input type="checkbox" id="filter_accelerator" checked="checked" onClick="toggle('accelerator')">
+                <label for="filter_accelerator">Accelerators <span>({{accelerator}})</span></label>
+            </li>
+            <li>
+                <img class="icon" src="{{app.request.basepath}}/view/img/icons/incubator.png" alt="" />
+                <input type="checkbox" id="filter_incubator" checked="checked" onClick="toggle('incubator')">
+                <label for="filter_incubator">Incubators <span>({{incubator}})</span></label>
+            </li>
+            <li>
+                <img class="icon" src="{{app.request.basepath}}/view/img/icons/coworking.png" alt="" />
+                <input type="checkbox" id="filter_coworking" checked="checked" onClick="toggle('coworking')">
+                <label for="filter_coworking">Coworking <span>({{coworking}})</span></label>
+            </li>
+            <li>
+                <img class="icon" src="{{app.request.basepath}}/view/img/icons/investor.png" alt="" />
+                <input type="checkbox" id="filter_investor" checked="checked" onClick="toggle('investor')">
+                <label for="filter_investor">Investors <span>({{investor}})</span></label>
+            </li>
+        </ul>
+        <div class="search">
+            <input type="text" name="search" id="search" placeholder="Search" data-provide="typeahead" autocomplete="off" />
+        </div>
+        <div class="add">
+            <a href="#modal_add" class="btn btn-large btn-inverse" data-toggle="modal">Add Something!</a>
+        </div>
+        <div class="info">
+            <a href="#modal_info" class="btn btn-large" data-toggle="modal">More Info</a>
+        </div>
+        <div class="blurb">
+            This map was made to connect and promote the Hawaii tech startup community.
+            Let's put Hawaii on the map!
+        </div>
+        <div class="share">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.alohastartups.com/map" data-text="Hawaii startup scene " data-via="alohastartups" data-count="none">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <div class="fb-like" data-href="http://www.alohastartups.com/map" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial"></div>
+        </div>
+        <div class="blurb">
+            <span>Created by</span>
+            <a target="_blank" href="http://www.twitter.com/alohastartups">@alohastartups</a> +
+            <a target="_blank" href="http://www.twitter.com/nayrsivart">@nayrsivart</a>
+        </div>
+        <div class="blurb">
+            <!-- per our license, you may not remove this line -->
+            {% include '_attribution.twig' %}
+        </div>
+
+    </div>
+</div>
+
+<!-- main menu bar (mobile) -->
+<div class="menu_mobile">
+    <div class="wrapper">
+        <div class="buttons">
+            <a href="#modal_add" class="btn btn-large btn-inverse" data-toggle="modal">Add</a>
+            <a href="#modal_info" class="btn btn-large" data-toggle="modal">Info</a>
+        </div>
+        <div class="logo">
+            <a href="http://alohastartups.com/">
+                <img src="{{app.request.basepath}}/view/img/logo.png" alt="AlohaStartups" />
+            </a>
+        </div>
+    </div>
+</div>
